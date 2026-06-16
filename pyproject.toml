@@ -1,0 +1,10 @@
+[project]
+name = "telegrid"
+version = "0.1.0"
+description = "A script to dump all your telegram chats' ids"
+readme = "README.md"
+requires-python = ">=3.14"
+dependencies = [
+    "pyyaml>=6.0.3",
+    "telethon>=1.44.0",
+]
