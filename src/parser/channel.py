@@ -1,3 +1,4 @@
+import os
 from logging import Logger
 
 import yaml
@@ -6,6 +7,8 @@ from models.entity import Entity
 
 
 def parse_channels(logger: Logger, channels: list[Entity], output_dir: str = "output"):
+    os.makedirs(f"{output_dir}", exist_ok=True)
+
     try:
         with open(f"{output_dir}/channels.yaml", "w") as file:
             yaml.dump(channels, file)
