@@ -6,7 +6,7 @@ Telegrid is a script that dumps chat ids for all entities in your telegram accou
 
 ### How to use
 
-- You need visit `https://my.telegram.org/` and create an application to obtain the required `api_id` and `api_hash`
+- You need visit [`https://my.telegram.org/`](https://my.telegram.org/apps) and create an application to obtain the required `api_id` and `api_hash`
 
 - Clone this repo
 
