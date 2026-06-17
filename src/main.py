@@ -1,4 +1,5 @@
 import asyncio
+import sys
 
 import telethon
 from telethon import TelegramClient
@@ -65,10 +66,12 @@ async def main():
                     )
 
     except InvalidEnvException as e:
-        logger.critical(e)
+        logger.warning(e)
+        sys.exit(1)
 
     except Exception as e:
         logger.critical(e)
+        sys.exit(1)
 
     parse_channels(logger, channels)
     parse_chats(logger, chats)
