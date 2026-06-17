@@ -35,6 +35,6 @@ Telegrid is a script that dumps chat ids for all entities in your telegram accou
 - You will be prompted to enter the phone number associated with your telegram account, then an otp for authorization and optionally a password if you have one set on your account
 
 - Telegrid will write its output to these paths:
-  - Channels: `${projectdir}/output/channels.yaml`
-  - Chats: `${projectdir}/output/chats.yaml`
-  - Users: `${projectdir}/output/users.yaml`
+  - Channels: `${workDir}/output/channels.yaml`
+  - Chats: `${workDir}/output/chats.yaml`
+  - Users: `${workDir}/output/users.yaml`
