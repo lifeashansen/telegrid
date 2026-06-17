@@ -1,5 +1,6 @@
 import asyncio
 import sys
+from logging import Logger
 
 import telethon
 from telethon import TelegramClient
@@ -13,12 +14,10 @@ from parser.group import parse_groups
 from parser.user import parse_users
 
 
-async def main():
+async def main(logger: Logger):
     channels: list[Entity] = []
     groups: list[Entity] = []
     users: list[Entity] = []
-
-    logger = init_logger("telegrid")
 
     try:
         cfg: Cfg = get_user_env()
@@ -75,4 +74,17 @@ async def main():
 
 
 if __name__ == "__main__":
-    asyncio.run(main())
+    logger: Logger = init_logger("telegrid")
+
+    try:
+        asyncio.run(main(logger))
+
+    except KeyboardInterrupt:
+        logger.critical("SIGINT received. Terminating telegrid")
+
+        sys.exit(1)
+
+    except Exception as e:
+        logger.critical(e)
+
+        sys.exit(1)
