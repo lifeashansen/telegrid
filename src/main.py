@@ -9,13 +9,13 @@ from config.env import Cfg, InvalidEnvException, get_user_env
 from config.logger import init_logger
 from models.entity import Entity
 from parser.channel import parse_channels
-from parser.chat import parse_chats
+from parser.group import parse_groups
 from parser.user import parse_users
 
 
 async def main():
     channels: list[Entity] = []
-    chats: list[Entity] = []
+    groups: list[Entity] = []
     users: list[Entity] = []
 
     logger = init_logger("telegrid")
@@ -51,7 +51,7 @@ async def main():
                     # https://docs.telethon.dev/en/stable/concepts/chats-vs-channels.html#converting-ids
                     real_id, _ = telethon.utils.resolve_id(dialog.id)
 
-                    chats.append(
+                    groups.append(
                         Entity(
                             name=dialog.name,
                             id=real_id,
@@ -66,7 +66,7 @@ async def main():
                     )
 
         parse_channels(logger, channels)
-        parse_chats(logger, chats)
+        parse_groups(logger, groups)
         parse_users(logger, users)
 
     except InvalidEnvException as e:
