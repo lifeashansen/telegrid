@@ -65,6 +65,10 @@ async def main():
                         )
                     )
 
+        parse_channels(logger, channels)
+        parse_chats(logger, chats)
+        parse_users(logger, users)
+
     except InvalidEnvException as e:
         logger.warning(e)
         sys.exit(1)
@@ -72,10 +76,6 @@ async def main():
     except Exception as e:
         logger.critical(e)
         sys.exit(1)
-
-    parse_channels(logger, channels)
-    parse_chats(logger, chats)
-    parse_users(logger, users)
 
 
 if __name__ == "__main__":
