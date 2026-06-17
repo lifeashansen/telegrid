@@ -36,5 +36,5 @@ Telegrid is a script that dumps chat ids for all entities in your telegram accou
 
 - Telegrid will write its output to these paths:
   - Channels: `${cwd}/output/channels.yaml`
-  - Chats: `${cwd}/output/chats.yaml`
+  - Groups: `${cwd}/output/groups.yaml`
   - Users: `${cwd}/output/users.yaml`
