@@ -1,4 +1,3 @@
-import sys
 from logging import Logger
 
 import yaml
@@ -12,7 +11,5 @@ def parse_channels(logger: Logger, channels: list[Entity], output_dir: str = "ou
             yaml.dump(channels, file)
             logger.info(f"Saved channels to {output_dir}/channels.yaml")
 
-    except Exception as e:
-        logger.critical(e)
-
-        sys.exit(1)
+    except Exception:
+        raise

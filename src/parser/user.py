@@ -1,4 +1,3 @@
-import sys
 from logging import Logger
 
 import yaml
@@ -12,7 +11,5 @@ def parse_users(logger: Logger, users: list[Entity], output_dir: str = "output")
             yaml.dump(users, file)
             logger.info(f"Saved users to {output_dir}/users.yaml")
 
-    except Exception as e:
-        logger.critical(e)
-
-        sys.exit(1)
+    except Exception:
+        raise

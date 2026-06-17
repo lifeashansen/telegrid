@@ -1,4 +1,3 @@
-import sys
 from logging import Logger
 
 import yaml
@@ -12,7 +11,5 @@ def parse_chats(logger: Logger, chats: list[Entity], output_dir: str = "output")
             yaml.dump(chats, file)
             logger.info(f"Saved chats to {output_dir}/chats.yaml")
 
-    except Exception as e:
-        logger.critical(e)
-
-        sys.exit(1)
+    except Exception:
+        raise
