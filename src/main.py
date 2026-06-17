@@ -45,10 +45,6 @@ async def main():
                         )
                     )
                 elif dialog.is_group:
-                    # Telethon and Telegram's internal APIs insert -100* at the beginning of channel ids
-                    # and make group ids negative so its easier to recognize the peer type at glance.
-                    # We therefore need to resolve the real id
-                    # https://docs.telethon.dev/en/stable/concepts/chats-vs-channels.html#converting-ids
                     real_id, _ = telethon.utils.resolve_id(dialog.id)
 
                     groups.append(
