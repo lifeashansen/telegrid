@@ -8,7 +8,7 @@ ie: Groups you are part of, channels you are subscribed to and users you have op
 - Clone this repo
 
   ```
-    git clone https://github.com/lifeashansen/telegrid.git && cd telegrid
+  git clone https://github.com/lifeashansen/telegrid.git && cd telegrid
   ```
 
 - Sync all dependencies
